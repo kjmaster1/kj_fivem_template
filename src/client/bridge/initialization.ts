@@ -40,7 +40,7 @@ import {FrozenPedBlipMenu} from "../menus/FrozenPedBlipMenu";
 import {Shop} from "../shops/Shop";
 import {PlayerData, TopPlayerData} from "../../common/interface";
 
-const kj_lib = exports['kj_lib']
+const kj_fivem_template = exports['kj_fivem_template'];
 const frozenPedTargetZone: FrozenPedTargetZone = makeTestZone();
 const shop: Shop = new Shop('testshop', Config.shop.buyShop.items, Config.shop.sellShop.items);
 
@@ -321,7 +321,7 @@ function makeSellShop(): ContextMenu {
 
 async function makeMainMenu(): Promise<ContextMenu> {
 
-  const playerData = await (kj_lib.GetPlayerData() as Promise<PlayerData>);
+  const playerData = await (kj_fivem_template.GetPlayerData() as Promise<PlayerData>);
   const main = [];
 
   const experiencesTable = Config.experience as { [key: string]: number };
@@ -408,7 +408,7 @@ async function makeMainMenu(): Promise<ContextMenu> {
 
 async function makeStatsMenu(): Promise<ContextMenu> {
   const stats = [];
-  const playerData: PlayerData = await kj_lib.GetPlayerData();
+  const playerData: PlayerData = await kj_fivem_template.GetPlayerData();
   const testStat = playerData['testStat'] as number;
   const earned = playerData['earned'] as number;
   const showStats = Object.values(Config.stats).some(Boolean);
