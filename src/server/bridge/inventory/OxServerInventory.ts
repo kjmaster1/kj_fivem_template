@@ -10,7 +10,7 @@ export class OxServerInventory extends ServerInventory {
   }
 
   getDurabilityType(): "quality" | "durability" {
-    return 'quality';
+    return 'durability';
   }
 
 

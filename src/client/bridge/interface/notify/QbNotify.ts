@@ -1,7 +1,7 @@
 import {NotifyBase} from "./NotifyBase";
-import {clientFramework} from "../../index";
-import {QbCoreClientFramework} from "../framework/QbCoreClientFramework";
-import {QboxClientFramework} from "../framework/QboxClientFramework";
+import {clientFramework} from "../../../index";
+import {QbCoreClientFramework} from "../../framework/QbCoreClientFramework";
+import {QboxClientFramework} from "../../framework/QboxClientFramework";
 
 export class QbNotify extends NotifyBase {
 

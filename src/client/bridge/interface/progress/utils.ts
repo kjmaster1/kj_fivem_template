@@ -1,6 +1,6 @@
 import {OxProgressBar, OxProgressBarTable} from "./OxProgressBar";
 import {QbProgressBar, QbProgressBarTable} from "./QbProgressBar";
-import Config from "../../../common/config";
+import Config from "../../../../common/config";
 import {ProgressBar} from "./ProgressBar";
 
 export function makeProgressBar(progressBarTable: OxProgressBarTable & QbProgressBarTable): ProgressBar {

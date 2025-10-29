@@ -9,6 +9,10 @@ export class ClientInventory extends Inventory {
     return undefined;
   }
 
+  getDurabilityType(): 'quality' | 'durability' {
+    return "quality"
+  }
+
   getItemData(item: string, framework?: ClientFramework): unknown {
     console.error('^1[ERROR]: No valid path found to get item data, please seek support!')
     return undefined;

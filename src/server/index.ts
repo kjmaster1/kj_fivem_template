@@ -9,7 +9,7 @@ import {
 } from "./bridge/initialization";
 import lib from "@overextended/ox_lib/server";
 
-const serverInventory: ServerInventory = initializeServerInventory();
+export const serverInventory: ServerInventory = initializeServerInventory();
 export const serverFramework: ServerFramework = initializeServerFramework(serverInventory);
 initializeTests();
 
@@ -20,5 +20,9 @@ lib.onClientCallback(`${cache.resource}:getplayerdata`, (source: number, type: s
 lib.onClientCallback(`${cache.resource}:gettopplayers`, () => {
   return getTopPlayers();
 });
+
+lib.onClientCallback(`${cache.resource}:getMetadata`, (playerId, item: string) => {
+  return serverFramework.getMetadata(playerId, item);
+})
 
 exports('GetPlayerData', getPlayerData);

@@ -3,14 +3,18 @@ import {ClientFramework} from "../framework/ClientFramework";
 
 export class OxClientInventory extends ClientInventory {
   getPlayerInventory(framework?: ClientFramework): unknown {
-    return exports[this.name].GetPlayerItems()
+    return exports[this.name].GetPlayerItems();
+  }
+
+  getDurabilityType(): "quality" | "durability" {
+    return "durability";
   }
 
   getItemData(item:string, framework?: ClientFramework): unknown {
-    return exports.ox_inventory.Items(item)
+    return exports.ox_inventory.Items(item);
   }
 
   hasItem(item: string, amount: number): boolean {
-    return exports[this.name].Search('count', item) >= amount
+    return exports[this.name].Search('count', item) >= amount;
   }
 }

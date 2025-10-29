@@ -16,3 +16,9 @@ export function LoadJsonFile<T = unknown>(path: string): T {
 
   return resp.then((response) => response.json()) as T;
 }
+
+export const Delay = (ms:number) => new Promise(res => setTimeout(res, ms));
+
+export function randomIntFromInterval(min: number, max: number) { // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}

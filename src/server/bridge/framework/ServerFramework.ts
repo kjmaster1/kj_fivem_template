@@ -51,6 +51,26 @@ export class ServerFramework extends Framework {
     }
   }
 
+  getDurabilityType(): 'quality' | 'durability' {
+    if (this.inventory) {
+      return this.inventory.getDurabilityType();
+    }
+    return "quality"
+  }
+
+  getMetadata(source:number, item:string) {
+    if (this.inventory) {
+      return this.inventory.getMetadata(source, item);
+    }
+    return undefined;
+  }
+
+  setMetadata(source:number, item:string, metaType:string, metaValue:string | boolean | number):void {
+    if (this.inventory) {
+      return this.inventory.setMetadata(source, item, metaType, metaValue);
+    }
+  }
+
   removeItem(source:number, item:string, count:number):void {
     if (this.inventory) {
       this.inventory.removeItem(source, item, count);

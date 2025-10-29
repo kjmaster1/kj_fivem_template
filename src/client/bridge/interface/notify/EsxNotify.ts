@@ -1,6 +1,6 @@
 import {NotifyBase} from "./NotifyBase";
-import {clientFramework} from "../../index";
-import {EsxClientFramework} from "../framework/EsxClientFramework";
+import {clientFramework} from "../../../index";
+import {EsxClientFramework} from "../../framework/EsxClientFramework";
 
 export class EsxNotify extends NotifyBase {
 

@@ -36,6 +36,13 @@ export class ClientFramework extends Framework {
     return undefined;
   }
 
+  getDurabilityType() : 'quality' | 'durability' {
+    if (this.inventory) {
+      return this.inventory.getDurabilityType();
+    }
+    return 'quality';
+  }
+
   getItemData(item: string): unknown {
     if (this.inventory) {
       return this.inventory.getItemData(item, this)
